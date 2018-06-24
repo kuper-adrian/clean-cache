@@ -1,0 +1,23 @@
+{
+  "name": "clean-cache",
+  "version": "1.0.0",
+  "description": "Simple single-file, in-memory cache.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuper-adrian/clean-cache.git"
+  },
+  "keywords": [
+    "cache",
+    "caching"
+  ],
+  "author": "Adrian Kuper",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuper-adrian/clean-cache/issues"
+  },
+  "homepage": "https://github.com/kuper-adrian/clean-cache#readme"
+}
