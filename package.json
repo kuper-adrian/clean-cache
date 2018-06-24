@@ -4,7 +4,8 @@
   "description": "Simple single-file, in-memory cache.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout=3000 ."
+    "test": "mocha --timeout=3000 .",
+    "lint": "./node_modules/.bin/eslint *.js"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
