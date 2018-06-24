@@ -9,11 +9,11 @@ class CacheItem {
 }
 
 /**
- * Class for caching objects based on a key for a given amount of "cache time".
+ * Class for caching objects in memory based on a key for a given amount of "cache time" (ttl).
  */
 class Cache {
   /**
-   * Class for caching objects based on a key for a given amount of "cache time".
+   * Constructor.
    *
    * @param {number} ttl Time an item remains in cache (in ms).
    */
@@ -80,7 +80,7 @@ class Cache {
   }
 
   /**
-   * Removes all objects that exceeded their cache time from the cache.
+   * Removes all objects that exceeded their ttl from the cache.
    */
   tidy() {
     Object.keys(this.items).forEach((key) => {
@@ -101,8 +101,7 @@ class Cache {
   }
 
   /**
-   * Returns true if item is still valid (meaning the duration between the
-   * creation of the object and now is smaller than the cache time).
+   * Returns true if item is expired.
    *
    * @param {CacheItem} item item to validate
    */
