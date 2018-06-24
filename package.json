@@ -4,9 +4,10 @@
   "description": "Simple single-file, in-memory cache.",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha --timeout=3000 index.test.js"
   },
   "devDependencies": {
+    "mocha": "^5.2.0",
     "sinon": "^6.0.0",
     "chai": "^4.1.2",
     "eslint": "^4.19.1",
