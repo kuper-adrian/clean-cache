@@ -4,7 +4,7 @@
   "description": "Simple single-file, in-memory cache.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout=3000 index.test.js"
+    "test": "mocha --timeout=3000 ."
   },
   "devDependencies": {
     "mocha": "^5.2.0",
