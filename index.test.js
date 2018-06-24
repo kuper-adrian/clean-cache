@@ -167,6 +167,52 @@ describe('Cache', () => {
       expect(returned).to.be.equal(null);
     });
 
+    it('should return null if object under key is expired', () => {
+      // PREPARE
+      const c = new Cache(TTL);
+      const obj1 = { some: 'prop' };
+      const obj2 = { some: 'prop2' };
+
+      c.add('1', obj1);
+      c.add('2', obj2);
+
+      sandbox.stub(Cache, 'isItemInvalid').callsFake((item) => {
+        if (item.value === obj2) {
+          return true;
+        }
+        return false;
+      });
+
+      // SYSTEM UNDER TEST
+      const returned = c.retrieve('2');
+
+      // VERIFY
+      expect(returned).to.be.equal(null);
+    });
+
+    it('should delete expired items if it was attempted to retrieve them', () => {
+      // PREPARE
+      const c = new Cache(TTL);
+      const obj1 = { some: 'prop' };
+      const obj2 = { some: 'prop2' };
+
+      c.add('1', obj1);
+      c.add('2', obj2);
+
+      sandbox.stub(Cache, 'isItemInvalid').callsFake((item) => {
+        if (item.value === obj2) {
+          return false;
+        }
+        return true;
+      });
+
+      // SYSTEM UNDER TEST
+      c.retrieve('2');
+
+      // VERIFY
+      expect(c.count()).to.be.equal(1);
+    });
+
     it('should throw an error if null was passed', () => {
       // PREPARE
       const c = new Cache(TTL);
