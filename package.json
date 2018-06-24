@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nyc mocha --timeout=3000 .",
     "lint": "./node_modules/.bin/eslint *.js",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "prepublishOnly": "npm run test && npm run lint"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
@@ -26,7 +27,8 @@
   },
   "keywords": [
     "cache",
-    "caching"
+    "caching",
+    "memory"
   ],
   "author": "Adrian Kuper",
   "license": "MIT",
