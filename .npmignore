@@ -1,0 +1,10 @@
+node_modules/
+
+.eslintrc.js
+.gitattributes
+.gitignore
+.npmignore
+.travis.yml
+
+index.test.js
+package-lock.json
