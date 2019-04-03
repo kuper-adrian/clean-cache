@@ -1,6 +1,6 @@
 {
   "name": "clean-cache",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple single-file, in-memory cache.",
   "main": "index.js",
   "scripts": {
